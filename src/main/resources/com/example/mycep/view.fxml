@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mycep.ViewController">
    <children>
       <GridPane alignment="CENTER" layoutY="29.0" prefHeight="227.0" prefWidth="500.0">
@@ -29,17 +28,17 @@
         </rowConstraints>
          <children>
             <Label text="Buscar CEP" />
-            <TextField GridPane.columnIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" text="Buscar" GridPane.columnIndex="3" />
+            <TextField fx:id="txtCEP" onAction="#initialize" GridPane.columnIndex="1" />
+            <Text fx:id="txtCepGuardado" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" />
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#onClickBuscar" text="Buscar" GridPane.columnIndex="3" />
             <Label text="Rua" GridPane.rowIndex="2" />
             <Label text="Bairro" GridPane.rowIndex="3" />
             <Label text="Cidade" GridPane.rowIndex="4" />
             <Label text="DDD" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtRua" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtBairro" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtCidade" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtDDD" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
    </children>
