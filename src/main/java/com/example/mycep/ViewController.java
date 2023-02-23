@@ -3,6 +3,7 @@ package com.example.mycep;
 import com.example.mycep.util.Endereco;
 import com.example.mycep.util.ServicoDeCEP;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -27,8 +28,6 @@ public class ViewController {
     private TextField txtDDD;
 
 
-
-
     @FXML
     protected void onClickBuscar() {
         String cep = txtCEP.getText();
@@ -44,9 +43,15 @@ public class ViewController {
 
         txtDDD.setText(Integer.toString(ddd));
 
+        if (endereco.getDdd() == 0) {
+            Alerts.showAlerts("Erro", null, "CEP com erro ou não existe.", Alert.AlertType.ERROR);
+            txtDDD.setText("");
+            txtCepGuardado.setText("");
+        }
+
     }
 
-    private void buscarEndereco(){
+    private void buscarEndereco() {
 
     }
 
